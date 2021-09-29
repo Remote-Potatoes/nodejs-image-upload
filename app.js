@@ -31,9 +31,7 @@ app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
  */
 app.use((req, res, next) => {
   if (req.session.user) {
-    app.locals.user = req.session.user;
-  } else {
-    app.locals.user = null;
+    res.locals.user = req.session.user;
   }
   next();
 });
